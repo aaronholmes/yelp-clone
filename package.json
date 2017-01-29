@@ -6,7 +6,7 @@
     "npm": ">=3"
   },
   "scripts": {
-
+    "preinstall": "node tools/nodeVersionCheck.js",
     "setup": "node tools/setup/setupMessage.js && npm install && node tools/setup/setup.js",
     "remove-demo": "babel-node tools/removeDemo.js",
     "start-message": "babel-node tools/startMessage.js",
@@ -26,8 +26,7 @@
     "test:watch": "npm run test -- --watch",
     "open:cover": "npm run test:cover && open coverage/index.html",
     "analyze-bundle": "babel-node ./tools/analyzeBundle.js",
-    "start": "node dist-server/server.js",
-    "postinstall": "cd dist-server && npm install"
+    "start": "node dist-server/server.js"
   },
   "author": "Cory House",
   "license": "MIT",
