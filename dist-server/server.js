@@ -6,10 +6,10 @@ var port = process.env.port || 3000;
 var app = express();
 
 app.use(compression());
-app.use(express.static(path.join(__dirname, 'app')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('*', (_req, res) => {
-  res.sendFile(path.join(__dirname, 'app/index.html'));
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
 app.listen(port, (err) => {
