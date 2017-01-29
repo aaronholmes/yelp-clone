@@ -25,7 +25,6 @@
     "test:watch": "npm run test -- --watch",
     "open:cover": "npm run test:cover && open coverage/index.html",
     "analyze-bundle": "babel-node ./tools/analyzeBundle.js",
-    "start": "node dist-server/server.js",
     "postinstall": "cd dist-server && npm install"
   },
   "author": "Cory House",
