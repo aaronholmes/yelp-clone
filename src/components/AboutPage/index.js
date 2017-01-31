@@ -8,7 +8,7 @@ const AboutPage = () => {
     <div>
       <h2 className={style.altHeader}>About</h2>
       <p>
-        This example app is part of the <a href="https://github.com/coryhouse/react-slingshot">React-Slingshot
+        Editing the example! This example app is part of the <a href="https://github.com/coryhouse/react-slingshot">React-Slingshot
         starter kit</a>.
       </p>
       <p>
