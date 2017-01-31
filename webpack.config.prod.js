@@ -5,6 +5,8 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import WebpackMd5Hash from 'webpack-md5-hash';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import autoprefixer from 'autoprefixer';
+import precss from 'precss';
+import cssnano from 'cssnano';
 import path from 'path';
 
 const GLOBALS = {
@@ -88,5 +90,5 @@ export default {
       {test: /\.json$/, loader: "json"}
     ]
   },
-  postcss: ()=> [autoprefixer]
+  postcss: ()=> [autoprefixer, precss, cssnano]
 };

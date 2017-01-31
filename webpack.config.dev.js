@@ -1,6 +1,8 @@
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import autoprefixer from 'autoprefixer';
+import precss from 'precss';
+import cssnano from 'cssnano';
 import path from 'path';
 
 export default {
@@ -61,5 +63,5 @@ export default {
       {test: /\.json$/, loader: "json"}
     ]
   },
-  postcss: ()=> [autoprefixer]
+  postcss: ()=> [autoprefixer, precss, cssnano]
 };
