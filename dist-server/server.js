@@ -8,6 +8,11 @@ var app = express();
 app.use(compression());
 app.use(express.static(path.join(__dirname, 'dist')));
 
+
+app.get('/vars.js', function(req, res){
+  res.send("var TEST='"+process.env.TEST+"'");
+});
+
 app.get('*', (_req, res) => {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
