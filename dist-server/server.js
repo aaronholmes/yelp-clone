@@ -22,6 +22,5 @@ app.listen(process.env.PORT || port, (err) => {
     console.log(err);
   } else {
     console.log(`server started port: ${port}`);
-    console.log(`BAHHHHHH: ${process.env.TEST}`);
   }
 });
