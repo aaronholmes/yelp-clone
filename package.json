@@ -24,7 +24,8 @@
     "test:watch": "npm run test -- --watch",
     "open:cover": "npm run test:cover && open coverage/index.html",
     "analyze-bundle": "babel-node ./tools/analyzeBundle.js",
-    "postinstall": "cd dist-server && npm install"
+    "postinstall": "cd dist-server && npm install",
+    "heroku-postbuild": "webpack -p --config ./webpack.config.prod.js --progress"
   },
   "author": "Aaron Holmes",
   "license": "MIT",
