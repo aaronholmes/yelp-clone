@@ -12,8 +12,9 @@ app.use(express.static(path.join(__dirname, 'dist')));
 app.get('/vars.js', function(req, res){
   res.send(`var process = {
     env: {
-      TEST: ${process.env.TEST}
+      TEST: "${process.env.TEST}"
     }
+   }
   `);
 });
 
