@@ -1,7 +1,7 @@
 {
-  "name": "react-slingshot",
-  "version": "5.0.0",
-  "description": "Starter kit for creating apps with React and Redux",
+  "name": "yelp-clone",
+  "version": "1.0.0",
+  "description": "React app that mimics yelp functionality",
   "engines": {
     "npm": ">=3"
   },
@@ -26,7 +26,7 @@
     "analyze-bundle": "babel-node ./tools/analyzeBundle.js",
     "postinstall": "cd dist-server && npm install"
   },
-  "author": "Cory House",
+  "author": "Aaron Holmes",
   "license": "MIT",
   "dependencies": {
     "dotenv-safe": "4.0.3",
@@ -100,23 +100,8 @@
     "webpack-hot-middleware": "2.13.2",
     "webpack-md5-hash": "0.0.5"
   },
-  "keywords": [
-    "react",
-    "reactjs",
-    "react-router",
-    "hot",
-    "reload",
-    "hmr",
-    "live",
-    "edit",
-    "webpack",
-    "redux",
-    "flux",
-    "boilerplate",
-    "starter"
-  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/coryhouse/react-slingshot"
+    "url": "https://github.com/aaronholmes/yelp-clone"
   }
 }
