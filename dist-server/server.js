@@ -14,7 +14,7 @@ app.get('/vars.js', function(req, res){
     env: {
       TEST: ${process.env.TEST}
     }
-  }`);
+  `);
 });
 
 app.get('*', (_req, res) => {
@@ -26,5 +26,6 @@ app.listen(process.env.PORT || port, (err) => {
     console.log(err);
   } else {
     console.log(`server started port: ${port}`);
+    console.log(`BAHHHHHH: ${process.env.TEST}`);
   }
 });
