@@ -8,10 +8,10 @@ import autoprefixer from 'autoprefixer';
 import precss from 'precss';
 import cssnano from 'cssnano';
 import path from 'path';
+import DotenvPlugin from 'webpack-dotenv-plugin';
 
 const GLOBALS = {
   'process.env.NODE_ENV': JSON.stringify('production'),
-  'process.env.TEST': JSON.stringify(process.env.TEST),
   __DEV__: false
 };
 
@@ -30,6 +30,11 @@ export default {
     filename: '[name].[chunkhash].js'
   },
   plugins: [
+    new DotenvPlugin({
+      allowEmptyValues: true,
+      sample: './config/.env.production',
+      path: './config/.env.production'
+    }),
     // Hash the files using MD5 so that their names change when the content changes.
     new WebpackMd5Hash(),
 
