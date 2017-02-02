@@ -11,6 +11,7 @@ import path from 'path';
 
 const GLOBALS = {
   'process.env.NODE_ENV': JSON.stringify('production'),
+  'process.env.TEST': JSON.stringify(process.env.TEST),
   __DEV__: false
 };
 
