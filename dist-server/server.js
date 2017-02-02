@@ -8,11 +8,6 @@ var app = express();
 app.use(compression());
 app.use(express.static(path.join(__dirname, 'dist')));
 
-
-app.get('/vars.js', function(req, res){
-  res.send("var process.env.TEST='"+process.env.TEST+"'");
-});
-
 app.get('*', (_req, res) => {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
@@ -22,6 +17,5 @@ app.listen(process.env.PORT || port, (err) => {
     console.log(err);
   } else {
     console.log(`server started port: ${port}`);
-    console.log(`BAHHHHHH: ${process.env.TEST}`);
   }
 });
