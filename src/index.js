@@ -1,10 +1,9 @@
 import React from 'react';
 import {render} from 'react-dom';
+import { Router, browserHistory } from 'react-router';
+import routes from './routes';
 import './styles/styles.scss';
 
 render (
-  <div>
-    <h1>Sample Appy</h1>
-    <h3>Environment: {process.env.TEST}</h3>
-  </div>, document.getElementById('app')
+  <Router history={browserHistory} routes={routes} />
 );
