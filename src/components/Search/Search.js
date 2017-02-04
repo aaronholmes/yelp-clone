@@ -9,7 +9,8 @@ class Search extends React.Component {
 
   processSearch(event) {
     event.preventDefault();
-    console.log(this.searchTerm);
+    const searchTerm = this.searchTerm.value;
+    this.context.router.transitionTo(`/search/${searchTerm}`)
   }
 
   render() {
@@ -27,5 +28,9 @@ class Search extends React.Component {
     )
   }
 };
+
+Search.contextTypes = {
+  router: React.PropTypes.object
+}
 
 export default Search;
