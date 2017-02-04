@@ -5,5 +5,5 @@ import routes from './routes';
 import './styles/styles.scss';
 
 render (
-  <Router history={browserHistory} routes={routes} />
+  <Router history={browserHistory} routes={routes} />, document.getElementById('app')
 );
