@@ -18,6 +18,7 @@ class App extends React.Component {
             <Search />
             <div>
               <Match exactly pattern="/" component={Dashboard}/>
+              <Match exactly pattern="/search/:term" component={Dashboard}/>
               <Match exactly pattern="/about" component={AboutPage}/>
               <Miss component={NotFoundPage}/>
             </div>
