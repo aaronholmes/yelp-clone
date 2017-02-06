@@ -5,17 +5,20 @@ import AboutPage from './AboutPage';
 import NotFoundPage from './NotFoundPage';
 import Business from './Business/Business';
 
-// Since this component is simple and static, there's no parent container for it.
-const Routes = () => {
-  return (
-    <div>
-      <Match exactly pattern="/" component={Dashboard}/>
-      <Match exactly pattern="/search/:term" component={Dashboard}/>
-      <Match exactly pattern="/about" component={AboutPage}/>
-      <Match exactly pattern="/business/add" component={Business}/>
-      <Miss component={NotFoundPage}/>
-    </div>
-  );
+class Routes extends React.Component {
+
+  render() {
+    return (
+      <div>
+        <Match exactly pattern="/" component={Dashboard}/>
+        <Match exactly pattern="/search/:term" component={Dashboard}/>
+        <Match exactly pattern="/about" component={AboutPage}/>
+        <Match pattern="/business/add" render={props => <Business addBusiness={this.props.addBusiness}/>} />
+        <Miss component={NotFoundPage}/>
+      </div>
+    );
+  }
+
 };
 
 export default Routes;

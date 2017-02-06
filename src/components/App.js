@@ -14,7 +14,7 @@ class App extends React.Component {
     super();
     this.addBusiness = this.addBusiness.bind(this);
     this.state = {
-      businesses: {},
+      businesses: [],
       order: {}
     }
   }
@@ -36,7 +36,7 @@ class App extends React.Component {
           <div>
             <HeaderNav />
             <Search />
-            <Routes/>
+            <Routes addBusiness={ this.addBusiness }/>
           </div>
         </BrowserRouter>
     );
