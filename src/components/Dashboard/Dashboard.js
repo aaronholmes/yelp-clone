@@ -12,7 +12,7 @@ class Dashboard extends React.Component {
             {
               Object
                 .keys(this.props.businesses)
-                .map(key => <BusinessItem key={key} />)
+                .map(key => <BusinessItem key={key} business={this.props.businesses[key]} />)
             }
           </ul>
           <div>

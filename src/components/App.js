@@ -17,19 +17,21 @@ class App extends React.Component {
     this.loadSamples = this.loadSamples.bind(this);
 
     this.state = {
-      businesses: [],
+      businesses: {},
       order: {}
     }
   }
 
   addBusiness(business) {
     const newBusiness = {
-      id: _.uniqueId('business-'),
-      name: business.name,
-      address: business.address
+      "_.uniqueId('business-')": {
+        name: business.name,
+        address: business.address
+      }
     };
+    console.log(Object.assign({}, this.state.businesses, newBusiness));
     this.setState({
-      businesses: this.state.businesses.concat(newBusiness),
+      businesses: Object.assign({}, this.state.businesses, newBusiness)
     });
   }
 
