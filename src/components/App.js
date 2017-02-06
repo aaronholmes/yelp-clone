@@ -46,7 +46,7 @@ class App extends React.Component {
           <div>
             <HeaderNav />
             <Search />
-            <Routes addBusiness={ this.addBusiness } loadSamples={this.loadSamples} />
+            <Routes addBusiness={ this.addBusiness } loadSamples={this.loadSamples} businesses={this.state.businesses} />
           </div>
         </BrowserRouter>
     );
