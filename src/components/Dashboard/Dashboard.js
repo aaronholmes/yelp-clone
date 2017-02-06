@@ -8,7 +8,9 @@ class Dashboard extends React.Component {
         <h2>Dashboard</h2>
         <p>
           Dashboard stuffs go here.
-          <button onClick={this.props.loadSamples}>Load Sample Businesses</button>
+          <div>
+            <button onClick={this.props.loadSamples}>Load Sample Businesses</button>
+          </div>
         </p>
       </div>
     );
