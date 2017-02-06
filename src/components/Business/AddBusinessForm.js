@@ -12,11 +12,12 @@ class AddBusinessForm extends React.Component {
       address: this.address.value
     }
     this.props.addBusiness(business);
+    this.businessForm.reset();
   }
   render() {
     return (
       <div>
-        <form onSubmit={this.createBusiness}>
+        <form ref={(input) => this.businessForm = input} onSubmit={this.createBusiness}>
           <input ref={(input) => this.name = input} type="text" placeholder="Business Name..." />
           <input ref={(input) => this.address = input} type="text" placeholder="Address.." />
           <button type="submit">Add Business</button>

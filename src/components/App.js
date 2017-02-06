@@ -4,7 +4,7 @@ import _ from 'lodash';
 import HeaderNav from './HeaderNav/HeaderNav';
 import Search from './Search/Search';
 import Routes from './Routes';
-
+import SampleBusinesses from './Business/SampleBusinesses';
 
 // This is a class-based component because the current
 // version of hot reloading won't hot reload a stateless
@@ -12,7 +12,10 @@ import Routes from './Routes';
 class App extends React.Component {
   constructor() {
     super();
+
     this.addBusiness = this.addBusiness.bind(this);
+    this.loadSamples = this.loadSamples.bind(this);
+
     this.state = {
       businesses: [],
       order: {}
@@ -30,13 +33,20 @@ class App extends React.Component {
     });
   }
 
+  loadSamples() {
+    this.setState({
+      businesses: SampleBusinesses
+    })
+    console.log("loaded samples");
+  }
+
   render() {
     return (
         <BrowserRouter>
           <div>
             <HeaderNav />
             <Search />
-            <Routes addBusiness={ this.addBusiness }/>
+            <Routes addBusiness={ this.addBusiness } loadSamples={this.loadSamples} />
           </div>
         </BrowserRouter>
     );

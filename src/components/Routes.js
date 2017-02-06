@@ -10,8 +10,8 @@ class Routes extends React.Component {
   render() {
     return (
       <div>
-        <Match exactly pattern="/" component={Dashboard}/>
-        <Match exactly pattern="/search/:term" component={Dashboard}/>
+        <Match exactly pattern="/" render={props => <Dashboard loadSamples={this.props.loadSamples}/>} />
+        <Match exactly pattern="/search/:term" render={props => <Dashboard loadSamples={this.props.loadSamples}/>} />
         <Match exactly pattern="/about" component={AboutPage}/>
         <Match pattern="/business/add" render={props => <Business addBusiness={this.props.addBusiness}/>} />
         <Miss component={NotFoundPage}/>
