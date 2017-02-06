@@ -8,6 +8,8 @@ const HeaderNav = () => {
         <Link to="/">Home</Link>
         {' | '}
         <Link to="/about">About</Link>
+        {' | '}
+        <Link to="/business/add">Add a new business</Link>
       </div>
   );
 };
