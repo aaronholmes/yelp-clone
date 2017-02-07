@@ -7,18 +7,22 @@ class Dashboard extends React.Component {
     return (
       <div>
         <h2>Dashboard</h2>
-        <p>
           <ul>
             {
               Object
                 .keys(this.props.businesses)
-                .map(key => <BusinessItem key={key} business={this.props.businesses[key]} />)
+                .map(key =>
+                  <BusinessItem
+                    key={key}
+                    business={this.props.businesses[key]}
+                    index={key}
+                    removeBusiness={this.props.removeBusiness}
+                  />)
             }
           </ul>
           <div>
             <button onClick={this.props.loadSamples}>Load Sample Businesses</button>
           </div>
-        </p>
       </div>
     );
   }

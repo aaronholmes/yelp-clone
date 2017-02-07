@@ -6,6 +6,7 @@ class BusinessItem extends React.Component {
       <li>
         <h3>{this.props.business.name}</h3>
         <p>{this.props.business.address}</p>
+        <button onClick={() => this.props.removeBusiness(this.props.index)}>Delete</button>
       </li>
     )
   }

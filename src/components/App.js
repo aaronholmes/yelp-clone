@@ -15,6 +15,7 @@ class App extends React.Component {
     super();
 
     this.addBusiness = this.addBusiness.bind(this);
+    this.removeBusiness = this.removeBusiness.bind(this);
     this.loadSamples = this.loadSamples.bind(this);
 
     this.state = {
@@ -43,6 +44,14 @@ class App extends React.Component {
     this.setState({ businesses })
   }
 
+  removeBusiness(key) {
+    const businesses = {...this.state.businesses};
+
+    // Need to do it this way for firebase to work correctly
+    businesses[key] = null;
+    this.setState({ businesses });
+  }
+
   loadSamples() {
     this.setState({
       businesses: SampleBusinesses
@@ -56,7 +65,12 @@ class App extends React.Component {
           <div>
             <HeaderNav />
             <Search />
-            <Routes addBusiness={ this.addBusiness } loadSamples={this.loadSamples} businesses={this.state.businesses} />
+            <Routes
+              addBusiness={ this.addBusiness }
+              removeBusiness={ this.removeBusiness }
+              loadSamples={this.loadSamples}
+              businesses={this.state.businesses}
+            />
           </div>
         </BrowserRouter>
     );
