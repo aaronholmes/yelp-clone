@@ -5,6 +5,7 @@ import HeaderNav from './HeaderNav/HeaderNav';
 import Search from './Search/Search';
 import Routes from './Routes';
 import SampleBusinesses from './Business/SampleBusinesses';
+import base from '../base';
 
 // This is a class-based component because the current
 // version of hot reloading won't hot reload a stateless
@@ -22,17 +23,24 @@ class App extends React.Component {
     }
   }
 
-  addBusiness(business) {
-    const newBusiness = {
-      "_.uniqueId('business-')": {
-        name: business.name,
-        address: business.address
-      }
-    };
-    console.log(Object.assign({}, this.state.businesses, newBusiness));
-    this.setState({
-      businesses: Object.assign({}, this.state.businesses, newBusiness)
+  componentWillMount() {
+    this.ref = base.syncState(`/businesses`, {
+      context: this,
+      state: 'businesses'
     });
+  }
+
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
+  }
+
+  addBusiness(business) {
+    const businesses = {...this.state.businesses};
+    const busKey = _.uniqueId('business-');
+
+    businesses[busKey] = business;
+
+    this.setState({ businesses })
   }
 
   loadSamples() {
@@ -60,3 +68,5 @@ App.propTypes = {
 };
 
 export default App;
+
+console.log(process.env);
