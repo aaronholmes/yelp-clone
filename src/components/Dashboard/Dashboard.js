@@ -1,4 +1,5 @@
 import React from 'react';
+import CSSTransitionGroup from 'react-addons-css-transition-group';
 import BusinessItem from '../Business/BusinessItem';
 
 // Since this component is simple and static, there's no parent container for it.
@@ -7,7 +8,14 @@ class Dashboard extends React.Component {
     return (
       <div>
         <h2>Dashboard</h2>
-          <ul>
+          <CSSTransitionGroup
+            component="ul"
+            transitionName="businessList"
+            className="businessList"
+            transitionAppear={true}
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={500}
+          >
             {
               Object
                 .keys(this.props.businesses)
@@ -19,7 +27,7 @@ class Dashboard extends React.Component {
                     removeBusiness={this.props.removeBusiness}
                   />)
             }
-          </ul>
+          </CSSTransitionGroup>
           <div>
             <button onClick={this.props.loadSamples}>Load Sample Businesses</button>
           </div>

@@ -1,0 +1,17 @@
+:global {
+  .businessList-enter {
+    transition: all 0.5s;
+    transform: translateX(-120%);
+    &.businessList-enter-active {
+      transform: translateX(0%);
+    }
+  }
+
+  .businessList-leave {
+    transition: all 0.5s;
+    transform: translateX(0%);
+    &.businessList-leave-active {
+      transform: translateX(120%);
+    }
+  }
+}
