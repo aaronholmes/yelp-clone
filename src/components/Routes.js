@@ -12,7 +12,7 @@ class Routes extends React.Component {
       <div>
         <Match exactly pattern="/" render=
           {
-            props =>
+            () =>
               <Dashboard
                 loadSamples={this.props.loadSamples}
                 removeBusiness={this.props.removeBusiness}
@@ -22,7 +22,7 @@ class Routes extends React.Component {
         />
         <Match exactly pattern="/search/:term" render=
           {
-            props =>
+            () =>
               <Dashboard
                 loadSamples={this.props.loadSamples}
                 removeBusiness={this.props.removeBusiness}
@@ -31,12 +31,19 @@ class Routes extends React.Component {
           }
         />
         <Match exactly pattern="/about" component={AboutPage}/>
-        <Match pattern="/business/add" render={props => <Business addBusiness={this.props.addBusiness}/>} />
+        <Match pattern="/business/add" render={() => <Business addBusiness={this.props.addBusiness}/>} />
         <Miss component={NotFoundPage}/>
       </div>
     );
   }
 
+}
+
+Routes.propTypes = {
+  loadSamples: React.PropTypes.func.isRequired,
+  removeBusiness: React.PropTypes.func.isRequired,
+  businesses: React.PropTypes.object.isRequired,
+  addBusiness: React.PropTypes.func.isRequired
 };
 
 export default Routes;

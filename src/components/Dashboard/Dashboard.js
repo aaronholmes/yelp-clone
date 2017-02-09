@@ -35,6 +35,12 @@ class Dashboard extends React.Component {
       </div>
     );
   }
+}
+
+Dashboard.propTypes = {
+  businesses: React.PropTypes.object.isRequired,
+  removeBusiness: React.PropTypes.func.isRequired,
+  loadSamples: React.PropTypes.func.isRequired
 };
 
 export default Dashboard;

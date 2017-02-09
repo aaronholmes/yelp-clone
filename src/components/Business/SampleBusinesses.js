@@ -9,4 +9,4 @@ const businesses = {
   }
 };
 
-export default businesses
+export default businesses;

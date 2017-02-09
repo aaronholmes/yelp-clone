@@ -10,7 +10,7 @@ class AddBusinessForm extends React.Component {
     const business = {
       name: this.name.value,
       address: this.address.value
-    }
+    };
     this.props.addBusiness(business);
     this.businessForm.reset();
   }
@@ -23,8 +23,12 @@ class AddBusinessForm extends React.Component {
           <button type="submit">Add Business</button>
         </form>
       </div>
-    )
+    );
   }
 }
+
+AddBusinessForm.propTypes = {
+  addBusiness: React.PropTypes.func.isRequired
+};
 
 export default AddBusinessForm;

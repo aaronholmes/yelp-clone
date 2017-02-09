@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { BrowserRouter, Match, Miss } from 'react-router';
+import { BrowserRouter } from 'react-router';
 import _ from 'lodash';
 import HeaderNav from './HeaderNav/HeaderNav';
 import Search from './Search/Search';
@@ -21,7 +21,7 @@ class App extends React.Component {
     this.state = {
       businesses: {},
       order: {}
-    }
+    };
   }
 
   componentWillMount() {
@@ -41,7 +41,7 @@ class App extends React.Component {
 
     businesses[busKey] = business;
 
-    this.setState({ businesses })
+    this.setState({ businesses });
   }
 
   removeBusiness(key) {
@@ -55,8 +55,7 @@ class App extends React.Component {
   loadSamples() {
     this.setState({
       businesses: SampleBusinesses
-    })
-    console.log("loaded samples");
+    });
   }
 
   render() {
@@ -66,8 +65,8 @@ class App extends React.Component {
             <HeaderNav />
             <Search />
             <Routes
-              addBusiness={ this.addBusiness }
-              removeBusiness={ this.removeBusiness }
+              addBusiness={this.addBusiness}
+              removeBusiness={this.removeBusiness}
               loadSamples={this.loadSamples}
               businesses={this.state.businesses}
             />
@@ -82,5 +81,3 @@ App.propTypes = {
 };
 
 export default App;
-
-console.log(process.env);

@@ -10,7 +10,7 @@ class Search extends React.Component {
   processSearch(event) {
     event.preventDefault();
     const searchTerm = this.searchTerm.value;
-    this.context.router.transitionTo(`/search/${searchTerm}`)
+    this.context.router.transitionTo(`/search/${searchTerm}`);
   }
 
   render() {
@@ -21,16 +21,16 @@ class Search extends React.Component {
           type="text"
           required
           placeholder="Search for restaurant..."
-          ref={(input) => {this.searchTerm = input}}
+          ref={(input) => {this.searchTerm = input;}}
         />
         <button type="submit">Find</button>
       </form>
-    )
+    );
   }
-};
+}
 
 Search.contextTypes = {
   router: React.PropTypes.object
-}
+};
 
 export default Search;
