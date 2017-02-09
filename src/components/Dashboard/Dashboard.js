@@ -15,6 +15,7 @@ class Dashboard extends React.Component {
             transitionAppear={true}
             transitionEnterTimeout={500}
             transitionLeaveTimeout={500}
+            transitionAppearTimeout={500}
           >
             {
               Object
