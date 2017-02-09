@@ -10,6 +10,10 @@ class Business extends React.Component {
       </div>
     );
   }
+}
+
+Business.propTypes = {
+  addBusiness: React.PropTypes.func.isRequired
 };
 
 export default Business;
