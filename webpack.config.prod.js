@@ -24,6 +24,11 @@ export default {
     publicPath: '/',
     filename: '[name].[chunkhash].js'
   },
+  stats: {
+    colors: true,
+    reasons: true,
+    chunks: true
+  },
   plugins: [
     // Hash the files using MD5 so that their names change when the content changes.
     new WebpackMd5Hash(),
