@@ -12,11 +12,7 @@
     },
     "production": {
       "presets": [
-        ["latest", {
-          "es2015": {
-            "modules": true
-          }
-        }]
+        "latest"
       ],
       "plugins": [
         "transform-react-constant-elements",
