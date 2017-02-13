@@ -8,6 +8,7 @@
   "author": "Cory House",
   "license": "MIT",
   "dependencies": {
+    "compression": "^1.6.2",
     "dotenv-safe": "^4.0.3",
     "history": "^4.2.0",
     "object-assign": "^4.1.0",
