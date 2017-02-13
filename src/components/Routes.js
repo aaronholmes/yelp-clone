@@ -10,28 +10,30 @@ class Routes extends React.Component {
   render() {
     return (
       <div>
-        <Match exactly pattern="/" render=
+        <Match exactly pattern="/" component=
           {
-            () =>
+            (props) =>
               <Dashboard
                 loadSamples={this.props.loadSamples}
                 removeBusiness={this.props.removeBusiness}
                 businesses={this.props.businesses}
+                {...props}
               />
           }
         />
-        <Match exactly pattern="/search/:term" render=
+        <Match exactly pattern="/search/:term" component=
           {
-            () =>
+            (props) =>
               <Dashboard
                 loadSamples={this.props.loadSamples}
                 removeBusiness={this.props.removeBusiness}
                 businesses={this.props.businesses}
+                {...props}
               />
           }
         />
         <Match exactly pattern="/about" component={AboutPage}/>
-        <Match pattern="/business/add" render={() => <Business addBusiness={this.props.addBusiness}/>} />
+        <Match pattern="/business/add" component={(props) => <Business addBusiness={this.props.addBusiness} {...props} />} />
         <Miss component={NotFoundPage}/>
       </div>
     );
