@@ -21,6 +21,11 @@ export default {
     publicPath: '/',
     filename: 'bundle.js'
   },
+  stats: {
+    colors: true,
+    reasons: true,
+    chunks: true
+  },
   plugins: [
     new DotenvPlugin({
       allowEmptyValues: true,
@@ -32,7 +37,7 @@ export default {
       __DEV__: true
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({     // Create HTML file that includes references to bundled CSS and JS.
       template: 'src/index.ejs',
       minify: {
